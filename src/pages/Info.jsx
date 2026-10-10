@@ -3,7 +3,13 @@ import React from 'react'
 import ResumeInput from '../components/ResumeInput'
 import Preview from '../components/Preview'
 import Stack from '@mui/material/Stack'
+
 export default function Info() {
+
+const [resumeDetails,setResumeDetails] = React.useState({
+      fullName:"",location:"",job:"",email:"",phone:"",linkedin:"",github:"",degree:"",college:"",year:"",skills:[],summary:""
+    })
+    
   return (
     <div>
       <Stack direction={{ xs: 'column', sm: 'row' }}
@@ -14,10 +20,10 @@ export default function Info() {
        }}
       >
         <Box>
-            <ResumeInput/>
+            <ResumeInput resumeDetails={resumeDetails} setResumeDetails={setResumeDetails}/>
         </Box>
          <Box>
-            <Preview/>
+            <Preview resumeDetails={resumeDetails}/>
         </Box>
 
       </Stack>
